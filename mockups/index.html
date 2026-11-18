@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Flame website · mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0b12;color:#f5f0e9;font:400 17px/1.55 'Alegreya Sans',sans-serif;padding:48px clamp(20px,4vw,56px) 80px}
+h1{font:700 26px/1.2 Cinzel,serif;letter-spacing:.06em}
+.sub{color:#b9ada2;margin:8px 0 40px;max-width:60em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px}
+a.card{display:block;color:inherit;text-decoration:none;border:1px solid rgba(217,163,90,.25);background:#15121b;transition:border-color .2s,transform .2s}
+a.card:hover{border-color:#d9a35a;transform:translateY(-3px)}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.card div{padding:18px 20px 22px}
+.card h2{font:700 17px/1.2 Cinzel,serif;letter-spacing:.06em;color:#f0c27a}
+.card p{color:#b9ada2;font-size:15px;margin-top:8px}
+.links{margin-top:12px;font-size:14px;color:#8f857c}
+.links a{color:#d9a35a}
+h3{font:700 15px/1 Cinzel,serif;letter-spacing:.2em;text-transform:uppercase;color:#d9a35a;margin:56px 0 18px}
+.assets{display:grid;grid-template-columns:2fr 2fr 1fr;gap:16px}
+.assets figure{border:1px solid rgba(217,163,90,.18);background:#15121b}
+.assets img{width:100%;height:220px;object-fit:cover}
+.assets figcaption{padding:10px 12px;font-size:14px;color:#b9ada2}
+</style>
+</head>
+<body>
+<h1>Black Flame · website mockups</h1>
+<p class="sub">Three directions for the series home. Each card opens a working page, responsive and with live effects. All three use the same assets: the standalone BLACK FLAME™ wordmark (cut from the Tactics logo), the v2 sigil SVG, press-kit art, and three Codex illustrations.</p>
+<div class="grid">
+  <a class="card" href="a-descent.html"><img src="shots/a-descent-hero.jpg" alt=""><div><h2>A · Descent</h2><p>Cinematic and game-first. Tactics key art fills the hero with the series wordmark over it. A series row with sealed slots, a Chapter I band, the trailer, stats and a screenshot strip.</p></div></a>
+  <a class="card" href="b-monolith.html"><img src="shots/b-monolith-hero.jpg" alt=""><div><h2>B · Monolith</h2><p>Franchise-first and minimal. The Black Flame itself (new Codex art) is the hero, followed by a one-line manifesto, Chapter I, and carved slabs for sealed future chapters.</p></div></a>
+  <a class="card" href="c-index.html"><img src="shots/c-index-hero.jpg" alt=""><div><h2>C · Index</h2><p>Editorial, with fact-sheet DNA. A split hero with a numbered series index table and a glowing tactics-grid floor, the abyss vista quote, a fact file, gameplay loop and studio panel.</p></div></a>
+</div>
+<p class="links">Full-page captures: <a href="shots/a-descent-desktop-full.jpg">A desktop</a> · <a href="shots/a-descent-mobile-full.jpg">A mobile</a> · <a href="shots/b-monolith-desktop-full.jpg">B desktop</a> · <a href="shots/b-monolith-mobile-full.jpg">B mobile</a> · <a href="shots/c-index-desktop-full.jpg">C desktop</a> · <a href="shots/c-index-mobile-full.jpg">C mobile</a></p>
+
+<h3>New assets (Codex)</h3>
+<div class="assets">
+  <figure><img src="assets/flame-hero.jpg" alt=""><figcaption>The Black Flame (hero for B)</figcaption></figure>
+  <figure><img src="assets/abyss-vista.jpg" alt=""><figcaption>The bottom of the world (band in C)</figcaption></figure>
+  <figure><img src="assets/sealed-slab.jpg" alt="" style="object-position:center 30%"><figcaption>Sealed slab (real sigil overlaid in CSS)</figcaption></figure>
+</div>
+</body>
+</html>

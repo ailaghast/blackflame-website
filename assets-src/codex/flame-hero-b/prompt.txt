@@ -1,0 +1,13 @@
+Use your image generation tool (exactly one call) to create ONE PNG, landscape 1536x1024, and save it in this folder as flame-hero-b.png. Do not create or overwrite any other image files.
+
+Context: this image is for the official website of BLACK FLAME, a dark fantasy video game series by Emberfish Games (indie studio). The first game is Black Flame Tactics, an autobattler roguelike: "Lead your party to the bottom of the world, where the Black Flame burns."
+
+Style reference: refs/keyart-style.jpg is the official key art of Black Flame Tactics. Match its rendering style and palette closely: polished painterly digital illustration (premium stylised game splash-art register), deep navy-indigo and violet smoky skies, swirling dark clouds, warm molten orange / gold / crimson fire with luminous edges, drifting ember sparks, a dark glossy stone floor with glowing golden seams. Do NOT copy the character or the chess-like figures from the reference; use it only for style, palette and lighting.
+
+Hard rules: NO text, NO letters, NO logos, NO watermark, NO UI, NO characters or people. Clean, high-quality, not over-sharpened, not HDR, no crunchy noise, no JPEG artifacts. Keep the outer edges of the frame dark so the image can blend into a near-black (#0d0b14) web page.
+
+SUBJECT: "The bottom of the world, where the Black Flame burns" - a wide establishing vista for the series website.
+We look down from a high ledge into a vast circular abyss in the underworld. Three great descending rings of cliffs and broken stone terraces spiral downward (the three Circles of the underworld), lit by scattered molten-orange fissures and a few distant braziers. At the very bottom centre of the abyss burns the Black Flame: a towering pitch-black, violet-black flame with sharp blade-like tongues rimmed by thin molten gold and crimson light, throwing a purple-crimson glow up the cliff walls. Embers rise out of the pit toward the viewer.
+Composition (landscape 1536x1024): the abyss and the flame are centred; the flame occupies the lower-middle area (roughly 45%-85% of the image height). The top 35% is dark, swirling navy-violet smoke and sky, fairly empty (space for a large website title). Edges vignette to near-black.
+
+After saving, list the saved file path.

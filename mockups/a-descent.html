@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Flame™ · Mockup A · Descent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Cinzel:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0b12; --bg2:#15121b; --panel:#1b1722;
+  --gold:#d9a35a; --gold-hi:#f0c27a; --ember:#b8452a; --ember-deep:#7e2414; --glow:#ffb071;
+  --cream:#f5f0e9; --muted:#b9ada2; --muted2:#8f857c;
+  --line:rgba(217,163,90,.22);
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);color:var(--cream);font:400 19px/1.6 'Alegreya Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.eyebrow{font:600 13px/1.7 Cinzel,serif;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;font:700 13px/1 Cinzel,serif;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);
+  background:linear-gradient(180deg,#c4512f,#8a2a16);border:1px solid #e9a26a;box-shadow:inset 0 1px 0 #ffd2a666,0 12px 32px -12px #e0552c;transition:transform .2s,filter .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12);box-shadow:inset 0 1px 0 #ffd2a666,0 18px 40px -12px #ff6a3a}
+.btn.ghost{background:rgba(13,11,18,.35);border-color:rgba(217,163,90,.5);box-shadow:none;backdrop-filter:blur(6px)}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn svg{width:14px;height:14px;fill:currentColor}
+
+/* Nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px var(--pad);
+  background:linear-gradient(180deg,rgba(13,11,18,.85),rgba(13,11,18,0));}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{height:30px;width:auto;fill:var(--cream);filter:drop-shadow(0 0 8px rgba(255,140,70,.45))}
+.brand img{height:22px;width:auto}
+.nav ul{display:flex;gap:36px;list-style:none;font:600 12px/1 Cinzel,serif;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.nav ul a{transition:color .2s}
+.nav ul a:hover{color:var(--cream)}
+.nav .btn{padding:12px 20px;font-size:11px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;align-items:center;overflow:hidden;isolation:isolate}
+.hero-art{position:absolute;inset:-2%;z-index:-3;background:url(assets/keyart-169.jpg) 22% 40%/cover no-repeat;animation:drift 30s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.06) translate(-1%,-1%)}}
+.hero-shade{position:absolute;inset:0;z-index:-2;background:
+  linear-gradient(90deg,rgba(13,11,18,0) 30%,rgba(13,11,18,.55) 62%,rgba(13,11,18,.75) 100%),
+  linear-gradient(180deg,rgba(13,11,18,.2) 0%,rgba(13,11,18,0) 30%,rgba(13,11,18,0) 70%,var(--bg) 100%)}
+.hero canvas.embers{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero-copy{justify-self:end;width:min(640px,100%);margin-right:var(--pad);padding:120px 0 80px;text-align:center}
+.hero-copy .eyebrow{color:var(--gold-hi);text-shadow:0 2px 12px #000}
+.mark{position:relative;margin:26px auto 22px;width:100%}
+.mark img{width:100%;height:auto;filter:drop-shadow(0 6px 30px rgba(0,0,0,.7)) drop-shadow(0 0 40px rgba(255,120,60,.18))}
+.tm{position:absolute;right:-22px;top:-4px;font:700 14px/1 'Alegreya Sans';color:var(--cream);opacity:.85}
+.series-line{display:flex;align-items:center;justify-content:center;gap:18px;font:600 14px/1 Cinzel,serif;letter-spacing:.34em;text-transform:uppercase;color:var(--cream)}
+.series-line::before,.series-line::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}
+.series-line::after{transform:scaleX(-1)}
+.hero-copy .lede{margin:26px auto 36px;max-width:30em;color:#e8ded2;font-size:20px;text-shadow:0 2px 14px #000}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:grid;justify-items:center;gap:10px;font:600 11px/1 Cinzel,serif;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+.scroll-cue i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Series */
+.series{position:relative;padding:140px var(--pad) 120px;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(184,69,42,.12),transparent 70%)}
+.series h2{font:700 clamp(34px,4.6vw,60px)/1.1 Cinzel,serif;letter-spacing:.02em;margin:22px 0 22px}
+.series .intro{max-width:36em;margin:0 auto;color:var(--muted);font-size:20px}
+.saga{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:28px;margin-top:80px}
+.entry{position:relative;aspect-ratio:748/896;border:1px solid var(--line);background:var(--bg2);overflow:hidden;text-align:left;transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s}
+.entry.lit:hover{transform:translateY(-8px);border-color:rgba(240,194,122,.7);box-shadow:0 30px 60px -20px rgba(255,100,50,.35)}
+.entry img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.entry.lit:hover img{transform:scale(1.04)}
+.entry .cap{position:absolute;inset:auto 0 0;padding:70px 22px 22px;background:linear-gradient(transparent,rgba(13,11,18,.96) 55%)}
+.entry .num{font:900 13px/1 Cinzel,serif;letter-spacing:.3em;color:var(--gold)}
+.entry h3{font:700 22px/1.2 Cinzel,serif;margin:10px 0 6px}
+.entry p{font-size:15px;color:var(--muted);line-height:1.4}
+.entry.sealed{display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,#221c2c 0%,#120f18 60%,#0d0b12 100%)}
+.entry.sealed svg{width:34%;fill:none;stroke:rgba(217,163,90,.28);stroke-width:.6;filter:drop-shadow(0 0 14px rgba(184,69,42,.25))}
+.entry.sealed .cap{background:none}
+.entry.sealed h3{color:#5d5560}
+.entry.sealed .num{color:#6f5b44}
+
+/* Tactics */
+.tactics{position:relative;isolation:isolate;padding:0 0 120px}
+.band{position:relative;min-height:78vh;display:grid;place-items:center;text-align:center;padding:120px var(--pad);overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;z-index:-2;background:url(assets/keyart-wide.jpg) 30% 50%/cover no-repeat;opacity:.75}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(13,11,18,.35) 30%,rgba(13,11,18,.35) 70%,var(--bg) 100%),radial-gradient(ellipse at center,rgba(13,11,18,.2),rgba(13,11,18,.8) 80%)}
+.band .logo{width:min(760px,90vw);margin:22px auto 26px;filter:drop-shadow(0 8px 30px rgba(0,0,0,.8))}
+.band .genre{font:600 15px/1 Cinzel,serif;letter-spacing:.3em;text-transform:uppercase;color:var(--cream)}
+.dates{display:flex;justify-content:center;gap:0;margin:34px auto 38px;border:1px solid var(--line);background:rgba(13,11,18,.6);backdrop-filter:blur(8px);width:max-content;max-width:100%}
+.dates div{padding:16px 28px;text-align:left}
+.dates div+div{border-left:1px solid var(--line)}
+.dates b{display:block;font:700 11px/1 Cinzel,serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.dates span{font-size:17px}
+
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(32px,5vw,80px);align-items:center;max-width:1240px;margin:40px auto 0;padding:0 var(--pad)}
+.about h2{font:700 clamp(28px,3vw,40px)/1.15 Cinzel,serif;margin:16px 0 20px}
+.about p{color:#d8cfc4;margin-bottom:16px}
+.trailer{position:relative;aspect-ratio:16/9;border:1px solid var(--line);background:#000 url(assets/keyart-169-logo.jpg) center/cover;cursor:pointer;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.trailer::after{content:"";position:absolute;inset:0;background:rgba(13,11,18,.25);transition:background .3s}
+.trailer:hover::after{background:rgba(13,11,18,.05)}
+.trailer .play{position:absolute;z-index:1;left:22px;bottom:22px;width:70px;height:70px;border-radius:50%;display:grid;place-items:center;background:rgba(13,11,18,.6);border:1px solid var(--gold);backdrop-filter:blur(6px);transition:transform .3s}
+.trailer:hover .play{transform:scale(1.08)}
+.trailer .play svg{width:26px;fill:var(--cream);margin-left:5px}
+.trailer .label{position:absolute;z-index:1;left:110px;bottom:50px;font:600 11px/1 Cinzel,serif;letter-spacing:.3em;text-transform:uppercase}
+.trailer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
+
+.stats{display:grid;grid-template-columns:repeat(5,1fr);max-width:1240px;margin:100px auto 0;padding:0 var(--pad)}
+.stat{text-align:center;padding:10px 12px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:700 clamp(36px,4vw,58px)/1 Cinzel,serif;background:linear-gradient(180deg,#fff3dd,var(--gold) 70%,#9c6a2c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:10px;font:600 12px/1.3 Cinzel,serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:90px var(--pad) 20px;scrollbar-width:thin;scrollbar-color:#3a3140 transparent}
+.gallery figure{flex:0 0 min(620px,82vw);scroll-snap-align:center;border:1px solid var(--line);overflow:hidden;background:#000}
+.gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.03)}
+.gallery figcaption{padding:12px 16px;font:600 11px/1 Cinzel,serif;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:70px var(--pad) 50px;background:linear-gradient(180deg,var(--bg),#09070d)}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;max-width:1240px;margin:0 auto}
+.foot h4{font:700 12px/1 Cinzel,serif;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot p,.foot li{font-size:16px;color:var(--muted);line-height:1.7;list-style:none}
+.foot a:hover{color:var(--cream)}
+.foot .ef{width:150px;margin-bottom:18px;opacity:.9}
+.legal{max-width:1240px;margin:56px auto 0;padding-top:24px;border-top:1px solid rgba(217,163,90,.12);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--muted2)}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .nav .btn{padding:10px 14px;font-size:10px;letter-spacing:.12em;white-space:nowrap}
+  .series-line{font-size:12px;letter-spacing:.24em;line-height:1.6}
+  .series-line::before,.series-line::after{width:28px;flex:none}
+  .band .genre{font-size:13px;letter-spacing:.2em;line-height:1.6}
+  .entry.sealed svg{position:absolute;right:26px;top:50%;transform:translateY(-50%);width:auto;height:62%}
+  .hero-art{background-position:18% 30%}
+  .hero{align-items:end}
+  .hero-shade{background:linear-gradient(180deg,rgba(13,11,18,.1) 0%,rgba(13,11,18,.2) 40%,rgba(13,11,18,.92) 72%,var(--bg) 100%)}
+  .hero-copy{justify-self:center;margin:0;padding:0 var(--pad) 110px}
+  .saga{grid-template-columns:minmax(0,340px);}
+  .entry.sealed{aspect-ratio:3/1}
+  .entry.sealed svg{width:12%}
+  .about{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr);row-gap:40px}
+  .stat:nth-child(odd){border-left:0}
+  .dates{flex-direction:column;width:100%}
+  .dates div+div{border-left:0;border-top:1px solid var(--line)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.hero-art,.scroll-cue i{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sigil" viewBox="-28.1 -39.05 56.2 78.1"><path d="M-26.6,-29.05l5.683,0l2.118,-7.7l2.118,7.7l12.432,0l4.25,-8.5l4.25,8.5l12.432,0l2.118,-7.7l2.118,7.7h5.683l-2.4,5.505c-0.601,15.599 -7.201,33.597 -15.95,52.495c3.212,-15.716 5.301,-34.462 6.025,-51.6l-4.999,0c-0.755,18.201 -4.331,40.913 -9.276,60.2c-4.946,-19.287 -8.521,-41.999 -9.276,-60.2h-4.999c0.724,17.138 2.813,35.884 6.025,51.6c-8.749,-18.898 -15.349,-36.896 -15.95,-52.495z"/></symbol></svg>
+
+<nav class="nav">
+  <a class="brand" href="#top" aria-label="Black Flame home"><svg viewBox="0 0 56.2 78.1"><use href="#sigil"/></svg><img src="assets/wordmark-black-flame.webp" alt="Black Flame"></a>
+  <ul><li><a href="#series">The Series</a></li><li><a href="#tactics">Black Flame Tactics</a></li><li><a href="#trailer">Trailer</a></li><li><a href="#studio">Studio</a></li></ul>
+  <a class="btn" href="https://store.steampowered.com/app/3382760/" target="_blank" rel="noopener">Wishlist on Steam</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-art" role="img" aria-label="Black Flame Tactics key art"></div>
+  <div class="hero-shade"></div>
+  <canvas class="embers" data-count="70"></canvas>
+  <div class="hero-copy">
+    <p class="eyebrow">Emberfish Games presents</p>
+    <h1 class="mark"><img src="assets/wordmark-black-flame.webp" alt="Black Flame"><span class="tm" aria-hidden="true">™</span></h1>
+    <p class="series-line">A dark fantasy game series</p>
+    <p class="lede">At the bottom of the world, the Black Flame burns. The first descent begins with <strong>Black Flame Tactics</strong>.</p>
+    <div class="ctas">
+      <a class="btn" href="https://store.steampowered.com/app/3382760/" target="_blank" rel="noopener">Wishlist on Steam</a>
+      <a class="btn ghost" href="#trailer"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg>Watch the trailer</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#series">Descend<i></i></a>
+</header>
+
+<main>
+<section class="series" id="series">
+  <p class="eyebrow reveal">The Series</p>
+  <h2 class="reveal">One flame. Many descents.</h2>
+  <p class="intro reveal">Black Flame is a series of dark fantasy strategy games from Emberfish Games, the studio behind Hadean Tactics. Each game is its own journey into the underworld.</p>
+  <ol class="saga">
+    <li class="entry lit reveal"><a href="#tactics">
+      <img src="assets/capsule-vertical.jpg" alt="Black Flame Tactics">
+      <div class="cap"><span class="num">I</span><h3>Black Flame Tactics</h3><p>Autobattler roguelike · Steam Early Access, March 2027</p></div>
+    </a></li>
+    <li class="entry sealed reveal" style="transition-delay:.12s"><svg viewBox="0 0 56.2 78.1"><use href="#sigil"/></svg><div class="cap"><span class="num">II</span><h3>Unrevealed</h3></div></li>
+    <li class="entry sealed reveal" style="transition-delay:.24s"><svg viewBox="0 0 56.2 78.1"><use href="#sigil"/></svg><div class="cap"><span class="num">III</span><h3>Unrevealed</h3></div></li>
+  </ol>
+</section>
+
+<section class="tactics" id="tactics">
+  <div class="band">
+    <div>
+      <p class="eyebrow reveal">Chapter I</p>
+      <img class="logo reveal" src="assets/logo-bft-white.png" alt="Black Flame Tactics">
+      <p class="genre reveal">Dark fantasy autobattler roguelike</p>
+      <div class="dates reveal">
+        <div><b>Free demo</b><span>Steam Next Fest · Feb 2027</span></div>
+        <div><b>Early Access</b><span>Steam · March 2027</span></div>
+        <div><b>Play</b><span>Solo or 2-player online co-op</span></div>
+      </div>
+      <a class="btn reveal" href="https://store.steampowered.com/app/3382760/" target="_blank" rel="noopener">Wishlist Black Flame Tactics</a>
+    </div>
+  </div>
+
+  <div class="about" id="trailer">
+    <div class="reveal">
+      <p class="eyebrow">The first descent</p>
+      <h2>No two runs are the same.</h2>
+      <p>Hire heroes, decide who fights, where they stand and who they go after first, then watch your plan play out on the battlefield.</p>
+      <p>Fight your way down through three Circles of the underworld. After each boss, ancient powers rise from the dark to offer you a pact, for better and for worse.</p>
+    </div>
+    <div class="trailer reveal" data-yt="UwFnC0aLkxE" role="button" tabindex="0" aria-label="Play the Black Flame Tactics trailer">
+      <span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span>
+      <span class="label">Official trailer</span>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat reveal"><b>60</b><span>Heroes</span></div>
+    <div class="stat reveal"><b>9</b><span>Alliances</span></div>
+    <div class="stat reveal"><b>57</b><span>Relics</span></div>
+    <div class="stat reveal"><b>21</b><span>Ancient pacts</span></div>
+    <div class="stat reveal"><b>7</b><span>Bosses</span></div>
+  </div>
+
+  <div class="gallery" aria-label="Screenshots">
+    <figure><img src="assets/shot-01-guardian-battle.jpg" alt="" loading="lazy"><figcaption>Guardian battle</figcaption></figure>
+    <figure><img src="assets/shot-03-chain-reactions.jpg" alt="" loading="lazy"><figcaption>Chain reactions</figcaption></figure>
+    <figure><img src="assets/shot-02-build-your-party.jpg" alt="" loading="lazy"><figcaption>Build your party</figcaption></figure>
+    <figure><img src="assets/shot-09-infernal-pact.jpg" alt="" loading="lazy"><figcaption>Infernal pact</figcaption></figure>
+    <figure><img src="assets/shot-08-brass-colossus.jpg" alt="" loading="lazy"><figcaption>Brass Colossus</figcaption></figure>
+    <figure><img src="assets/shot-10-abyss-pit.jpg" alt="" loading="lazy"><figcaption>The Abyss</figcaption></figure>
+  </div>
+</section>
+</main>
+
+<footer id="studio">
+  <div class="foot">
+    <div>
+      <img class="ef" src="assets/logo-emberfish.png" alt="Emberfish Games">
+      <p>A two-person independent studio in São Paulo, Brazil, making strategy games with depth and replayability. Creators of Hadean Tactics.</p>
+    </div>
+    <div><h4>Games</h4><ul><li><a href="#tactics">Black Flame Tactics</a></li><li><a href="https://store.steampowered.com/app/3382760/">Steam page</a></li></ul></div>
+    <div><h4>Follow</h4><ul><li><a href="https://emberfishgames.com">emberfishgames.com</a></li><li><a href="https://forum.emberfishgames.com">Forum</a></li><li><a href="https://x.com/emberfishgames">X / Twitter</a></li></ul></div>
+    <div><h4>Press</h4><ul><li><a href="mailto:lili@emberfishgames.com">lili@emberfishgames.com</a></li><li><a href="#">Press kit</a></li></ul></div>
+  </div>
+  <div class="legal">
+    <span>BLACK FLAME™ and BLACK FLAME TACTICS™ are trademarks of Emberfish Games.</span>
+    <span>© 2026 Emberfish Games. All rights reserved.</span>
+  </div>
+</footer>
+<script src="assets/fx.js"></script>
+</body>
+</html>

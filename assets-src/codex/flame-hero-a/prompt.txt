@@ -1,0 +1,13 @@
+Use your image generation tool (exactly one call) to create ONE PNG, landscape 1536x1024, and save it in this folder as flame-hero-a.png. Do not create or overwrite any other image files.
+
+Context: this image is for the official website of BLACK FLAME, a dark fantasy video game series by Emberfish Games (indie studio). The first game is Black Flame Tactics, an autobattler roguelike: "Lead your party to the bottom of the world, where the Black Flame burns."
+
+Style reference: refs/keyart-style.jpg is the official key art of Black Flame Tactics. Match its rendering style and palette closely: polished painterly digital illustration (premium stylised game splash-art register), deep navy-indigo and violet smoky skies, swirling dark clouds, warm molten orange / gold / crimson fire with luminous edges, drifting ember sparks, a dark glossy stone floor with glowing golden seams. Do NOT copy the character or the chess-like figures from the reference; use it only for style, palette and lighting.
+
+Hard rules: NO text, NO letters, NO logos, NO watermark, NO UI, NO characters or people. Clean, high-quality, not over-sharpened, not HDR, no crunchy noise, no JPEG artifacts. Keep the outer edges of the frame dark so the image can blend into a near-black (#0d0b14) web page.
+
+SUBJECT: "The Black Flame" itself, as the hero image of the series website.
+A single tall, majestic flame burning on a dark obsidian floor at the bottom of the world. The flame itself is BLACK: its body is pitch-black / deep violet-black, like living obsidian smoke, with sharp, carved, blade-like tongues (not soft fluffy fire). Its edges are rimmed with thin bright molten orange-gold and crimson light, and a few hot gold cracks glow inside it. Around it, a dim purple-crimson halo lights the smoke; the flame casts warm reflections onto the glossy dark floor, where thin golden seams of a tiled stone floor radiate outward from its base, faintly glowing.
+Composition (landscape 1536x1024): flame centred horizontally; its base sits at about 82% of the image height and its tallest tongue reaches about 18% from the top. The left and right thirds are mostly dark smoky sky and shadow (negative space for website text). Ember sparks drift upward. Dramatic, iconic, symmetrical-ish but organic. Edges vignette to near-black.
+
+After saving, list the saved file path.

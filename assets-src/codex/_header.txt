@@ -1,0 +1,8 @@
+Use your image generation tool (exactly one call) to create ONE PNG, {SIZE}, and save it in this folder as {SLUG}.png. Do not create or overwrite any other image files.
+
+Context: this image is for the official website of BLACK FLAME, a dark fantasy video game series by Emberfish Games (indie studio). The first game is Black Flame Tactics, an autobattler roguelike: "Lead your party to the bottom of the world, where the Black Flame burns."
+
+Style reference: refs/keyart-style.jpg is the official key art of Black Flame Tactics. Match its rendering style and palette closely: polished painterly digital illustration (premium stylised game splash-art register), deep navy-indigo and violet smoky skies, swirling dark clouds, warm molten orange / gold / crimson fire with luminous edges, drifting ember sparks, a dark glossy stone floor with glowing golden seams. Do NOT copy the character or the chess-like figures from the reference; use it only for style, palette and lighting.
+
+Hard rules: NO text, NO letters, NO logos, NO watermark, NO UI, NO characters or people. Clean, high-quality, not over-sharpened, not HDR, no crunchy noise, no JPEG artifacts. Keep the outer edges of the frame dark so the image can blend into a near-black (#0d0b14) web page.
+

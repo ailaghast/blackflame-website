@@ -1,0 +1,13 @@
+Use your image generation tool (exactly one call) to create ONE PNG, portrait 1024x1536, and save it in this folder as blank-slab.png. Do not create or overwrite any other image files.
+
+Context: this image is for the official website of BLACK FLAME, a dark fantasy video game series by Emberfish Games (indie studio). The first game is Black Flame Tactics, an autobattler roguelike: "Lead your party to the bottom of the world, where the Black Flame burns."
+
+Style reference: refs/keyart-style.jpg is the official key art of Black Flame Tactics. Match its rendering style and palette closely: polished painterly digital illustration (premium stylised game splash-art register), deep navy-indigo and violet smoky skies, swirling dark clouds, warm molten orange / gold / crimson fire with luminous edges, drifting ember sparks, a dark glossy stone floor with glowing golden seams. Do NOT copy the character or the chess-like figures from the reference; use it only for style, palette and lighting.
+
+Hard rules: NO text, NO letters, NO logos, NO watermark, NO UI, NO characters or people. Clean, high-quality, not over-sharpened, not HDR, no crunchy noise, no JPEG artifacts. Keep the outer edges of the frame dark so the image can blend into a near-black (#0d0b14) web page.
+
+SUBJECT: a sealed, unrevealed chapter of the series - used on the website as a placeholder card for future games that have not been announced yet. (A logo emblem will be overlaid on it later by the web designer, so leave its face clean.)
+A tall slab / monolith of dark obsidian-like stone, seen straight-on and symmetrical, standing in darkness on a dark glossy stone floor. Its front face is FLAT, SMOOTH and BLANK in the upper-middle area (no carving, no symbol, no runes, no engravings at all) - a calm dark polished surface with subtle violet reflections, framed by rougher chiselled edges. A few hairline cracks near the edges and base glow with very faint dim ember-orange light, as if a fire inside has not woken yet. Faint violet mist around the slab's base, a few dim embers drifting.
+Composition (portrait 1024x1536): slab centred, filling about 75% of the height and about 55% of the width; the blank face area is centred horizontally and sits at 25%-60% of the image height. Very dark, low-key, mysterious; background fades to near-black on all sides.
+
+After saving, list the saved file path.
