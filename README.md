@@ -25,26 +25,38 @@ node shoot-site.js     # desktop and mobile screenshots in tools/_review/, and i
 
 `node build-site-assets.js` regenerates everything in `docs/assets/img`, `docs/assets/video` and the favicons from the press kit and the Steam capsule folders in `D:\Trabalho\Jogos\HTBF`.
 
-## Deploy (one-time setup)
+## Hosting
 
-1. **Repository.** Create a GitHub repository, for example `blackflame-website`, and push this folder to it. On a free GitHub plan, Pages only works on public repositories.
-2. **Pages.** In the repo, go to *Settings → Pages → Build and deployment*, choose *Deploy from a branch*, then pick branch `main` and folder `/docs`. Under *Custom domain*, enter `blackflamegame.com`; the `docs/CNAME` file already contains it.
-3. **DNS for blackflamegame.com**, at your domain registrar:
-   | Type  | Host | Value |
-   |-------|------|-------|
-   | A     | @    | 185.199.108.153 |
-   | A     | @    | 185.199.109.153 |
-   | A     | @    | 185.199.110.153 |
-   | A     | @    | 185.199.111.153 |
-   | AAAA  | @    | 2606:50c0:8000::153 |
-   | AAAA  | @    | 2606:50c0:8001::153 |
-   | AAAA  | @    | 2606:50c0:8002::153 |
-   | AAAA  | @    | 2606:50c0:8003::153 |
-   | CNAME | www  | `<your-github-username>.github.io` |
+- Repo: https://github.com/ailaghast/blackflame-website. GitHub Pages deploys from branch `main`, folder `/docs`, with custom domain `blackflamegame.com`. Every push to `main` republishes the site in about 30 seconds.
+- Both domains are registered at **Squarespace Domains** (domains.squarespace.com).
+
+### DNS for blackflamegame.com (Squarespace)
+
+In Squarespace, go to *Domains → blackflamegame.com → DNS → DNS Settings*:
+
+1. Delete the **Squarespace Defaults** record group (the parking A records and `www → ext-sq.squarespace.com`).
+2. Add these custom records:
+   | Host | Type  | Data |
+   |------|-------|------|
+   | @    | A     | 185.199.108.153 |
+   | @    | A     | 185.199.109.153 |
+   | @    | A     | 185.199.110.153 |
+   | @    | A     | 185.199.111.153 |
+   | @    | AAAA  | 2606:50c0:8000::153 |
+   | @    | AAAA  | 2606:50c0:8001::153 |
+   | @    | AAAA  | 2606:50c0:8002::153 |
+   | @    | AAAA  | 2606:50c0:8003::153 |
+   | www  | CNAME | ailaghast.github.io |
 
    GitHub redirects `www.blackflamegame.com` to the bare domain on its own.
-4. **HTTPS and domain verification.** Once DNS has propagated, which can take up to a day, tick *Enforce HTTPS* in Settings → Pages. Also verify the domain under your GitHub account (*Settings → Pages → Add a verified domain*, which needs one TXT record). Verification stops anyone else from claiming the domain on GitHub Pages.
-5. **blackflamegames.com → blackflamegame.com.** The best option is your registrar's *URL forwarding / redirect*: a permanent 301 to `https://blackflamegame.com`, with path forwarding, set for both `@` and `www`. If the registrar can't do that, push the `redirect/` folder to a second GitHub repo and enable Pages on it with the custom domain `blackflamegames.com`, using the same DNS records as in step 3.
+3. **Verify the domain** so nobody else can claim it on GitHub Pages: open GitHub *profile Settings → Pages → Add a domain*, enter `blackflamegame.com`, and add the TXT record GitHub shows (host `_github-pages-challenge-ailaghast`) in Squarespace. Then click *Verify*.
+4. Once DNS has propagated (usually minutes, sometimes a few hours), GitHub issues the HTTPS certificate. Then tick **Enforce HTTPS** in the repo's *Settings → Pages*.
+
+### blackflamegames.com → blackflamegame.com
+
+In Squarespace, go to *Domains → blackflamegames.com → Domain Forwarding* (under DNS). Add a rule for `@` and one for `www`, each forwarding to `https://blackflamegame.com` as a **permanent (301)** redirect, with path forwarding on if offered.
+
+Fallback, if forwarding isn't available: push the `redirect/` folder to a second repo, enable Pages on it with custom domain `blackflamegames.com`, and use the same DNS records as above.
 
 ## Notes
 
