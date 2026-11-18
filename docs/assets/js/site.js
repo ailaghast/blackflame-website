@@ -1,4 +1,4 @@
-// Black Flame — blackflamegame.com
+// Black Flame — blackflamegames.com
 (function () {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const shot = location.hash === '#shot'; // screenshot mode used by tools/shoot-site.js
