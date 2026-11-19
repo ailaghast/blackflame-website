@@ -9,7 +9,9 @@ const ffmpeg = require('ffmpeg-static');
 
 const PK = 'D:/Trabalho/Jogos/HTBF/Black Flame Tactics - Press Kit';
 const CAP = 'D:/Trabalho/Jogos/HTBF/Steam Capsules/BFT_v2';
-const STORE = `${CAP}/steam store page v38`; // media of the live Steam store page: screenshots, description clips
+// Media of the live Steam store page (screenshots, description clips). Set BF_STORE to build from a fresh
+// extraction of a newer drop before it has been copied into the HTBF folder.
+const STORE = process.env.BF_STORE || `${CAP}/steam store page v38`;
 const SIGIL = 'D:/Trabalho/Jogos/HTBF/Logo/sigil-shapes/svg/00-current-v2.svg';
 const CODEX = path.resolve(__dirname, '../assets-src/codex');
 const OUT = path.resolve(__dirname, '../docs');
