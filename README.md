@@ -23,7 +23,7 @@ node serve.js          # http://localhost:8787
 node shoot-site.js     # desktop and mobile screenshots in tools/_review/, and it re-renders docs/og-image.jpg
 ```
 
-`node build-site-assets.js` regenerates everything in `docs/assets/img`, `docs/assets/video` and the favicons from the press kit and the Steam capsule folders in `D:\Trabalho\Jogos\HTBF`.
+`node build-site-assets.js` regenerates everything in `docs/assets/img`, `docs/assets/video` and the favicons from the press kit and the Steam capsule folders in `D:\Trabalho\Jogos\HTBF`. The screenshots and the gameplay loop come from the latest Steam store page drop (`Steam Capsules\BFT_v2\steam store page v38`). When a new one arrives, point `STORE` in the script at it, rebuild, and update the gallery list in `docs/index.html` to match.
 
 ## Hosting
 

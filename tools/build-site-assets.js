@@ -9,6 +9,7 @@ const ffmpeg = require('ffmpeg-static');
 
 const PK = 'D:/Trabalho/Jogos/HTBF/Black Flame Tactics - Press Kit';
 const CAP = 'D:/Trabalho/Jogos/HTBF/Steam Capsules/BFT_v2';
+const STORE = `${CAP}/steam store page v38`; // media of the live Steam store page: screenshots, description clips
 const SIGIL = 'D:/Trabalho/Jogos/HTBF/Logo/sigil-shapes/svg/00-current-v2.svg';
 const CODEX = path.resolve(__dirname, '../assets-src/codex');
 const OUT = path.resolve(__dirname, '../docs');
@@ -60,8 +61,8 @@ async function icons() {
 }
 
 async function video() {
-  // Gameplay loop from the full-colour source capture the press-kit GIF was made from (1170x658, 30 fps)
-  const src = 'D:/Trabalho/Jogos/HTBF/Steam Capsules/gifs/05-abyss-pit.mp4';
+  // Gameplay loop: the Abyss Pit clip from the Steam description (1170x658, 30 fps), also the source of the press-kit GIF
+  const src = `${STORE}/description-media/bft-abyss-pit.mp4`;
   const out = path.join(VID, 'gameplay-abyss-pit.mp4');
   execFileSync(ffmpeg, ['-y', '-loglevel', 'error', '-i', src, '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '23',
     '-pix_fmt', 'yuv420p', '-movflags', '+faststart', out]);
@@ -80,8 +81,10 @@ async function main() {
   await webp(`${PK}/Key Art/Black Flame Tactics - Key Art (no logo).png`, 'keyart', [1280, 1920, 2260], 78);
   await webp(`${CAP}/main_capsule_1232x706.png`, 'capsule-main', [640, 1232], 84);
   await webp(`${CAP}/vertical_capsule_748x896.png`, 'capsule-vertical', [400, 748], 84);
-  // All 10 screenshots: 640/1280 for the carousel, 1920 for the click-to-enlarge viewer
-  for (const f of fs.readdirSync(`${CAP}/screenshots`).filter(f => f.endsWith('.png'))) await webp(`${CAP}/screenshots/${f}`, `shot-${f.replace('.png', '')}`, [640, 1280, 1920], 80);
+  // The Steam store screenshots, in store order: 640/1280 for the carousel, 1920 for the click-to-enlarge viewer.
+  // Old shot-* files are removed first so screenshots dropped from the store don't linger.
+  for (const f of fs.readdirSync(IMG)) if (f.startsWith('shot-')) fs.unlinkSync(path.join(IMG, f));
+  for (const f of fs.readdirSync(`${STORE}/screenshots`).filter(f => f.endsWith('.png'))) await webp(`${STORE}/screenshots/${f}`, `shot-${f.replace('.png', '')}`, [640, 1280, 1920], 80);
 
   // clear outputs from earlier versions of the page
   for (const d of [IMG, VID]) for (const f of fs.readdirSync(d)) if (/^(black-flame-\d|gameplay-chain-reaction)/.test(f)) fs.unlinkSync(path.join(d, f));
